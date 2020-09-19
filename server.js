@@ -1,6 +1,7 @@
 const express = require("express");
 require("colors");
 //  get env variables
+const connectToDatabase = require("./config/db");
 require("dotenv").config({ path: "./config/config.env" });
 //  load routes
 const restaurants = require("./routes/restaurants");
@@ -12,6 +13,9 @@ const auth = require("./routes/auth");
 const PORT = process.env.PORT || 5000;
 //  initialise express
 const app = express();
+
+//  connection to db
+connectToDatabase();
 
 //  use routes
 app.use("/api/v1/restaurants", restaurants);
