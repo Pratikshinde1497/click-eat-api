@@ -17,6 +17,9 @@ const app = express();
 //  connection to db
 connectToDatabase();
 
+//  use body parser
+app.use(express.json());
+
 //  use routes
 app.use("/api/v1/restaurants", restaurants);
 app.use("/api/v1/dishes", dishes);
