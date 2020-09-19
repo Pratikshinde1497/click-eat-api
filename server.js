@@ -3,6 +3,8 @@ require("colors");
 //  get env variables
 const connectToDatabase = require("./config/db");
 require("dotenv").config({ path: "./config/config.env" });
+const ErrorHandler = require("./middelware/ErrorHandler");
+
 //  load routes
 const restaurants = require("./routes/restaurants");
 const dishes = require("./routes/dishes");
@@ -26,6 +28,9 @@ app.use("/api/v1/dishes", dishes);
 app.use("/api/v1/reviews", reviews);
 app.use("/api/v1/users", users);
 app.use("/api/v1/auth", auth);
+
+//  error handling
+app.use(ErrorHandler);
 
 //  listen on port
 app.listen(PORT, () => {
