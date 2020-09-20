@@ -13,7 +13,7 @@ const ErrorHandler = (err, req, res, next) => {
 
   //  mongoose duplicate value
   if (err.code === 11000) {
-    const message = `Duplicate value provided`;
+    const message = `Duplicate value provided ${err}`;
     error = new ErrorResponse(message, 400);
   }
 
@@ -23,7 +23,7 @@ const ErrorHandler = (err, req, res, next) => {
     error = new ErrorResponse(message, 400);
   }
 
-  res.status(error.statusCode).json({
+  res.status(error.statusCode || 500).json({
     success: false,
     error: error.message || "server error",
   });

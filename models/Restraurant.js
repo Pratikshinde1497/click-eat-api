@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
+const GeoCoder = require("../utility/GeoCoder");
 
-const Restraurant = new mongoose.Schema({
+const RestraurantSchema = new mongoose.Schema({
   name: {
     type: String,
     required: [true, "please, add restraurant name"],
@@ -21,11 +22,12 @@ const Restraurant = new mongoose.Schema({
   phone: {
     type: String,
     maxlength: [20, "phone number cannot be more than 20 numbers"],
-    unique: [true, "phone number is duplicate"],
+    required: [true, "please, enter your phone number"],
   },
   email: {
     type: String,
     match: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "enter valid email"],
+    required: [true, "please, enter your email id"],
   },
   website: {
     type: String,
@@ -93,4 +95,22 @@ const Restraurant = new mongoose.Schema({
   // },
 });
 
-module.exports = new mongoose.model("Restaurant", Restraurant);
+RestraurantSchema.pre("save", async function (next) {
+  const loc = await GeoCoder.geocode(this.address);
+  if (loc.length !== 0) {
+    this.location = {
+      type: "Point",
+      coordinates: [loc[0].longitude, loc[0].latitude],
+      formattedAddress: loc[0].formattedAddress,
+      street: loc[0].streetName,
+      state: loc[0].state,
+      zipcode: loc[0].zipcode,
+      country: loc[0].countryCode,
+      city: loc[0].city,
+    };
+    this.address = undefined;
+  }
+  next();
+});
+
+module.exports = new mongoose.model("Restaurant", RestraurantSchema);
