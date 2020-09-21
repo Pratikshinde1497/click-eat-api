@@ -1,0 +1,108 @@
+[
+  {
+    "name": "Kalyany Hotel",
+    "details": "kalyani for all kind of food. You will find it so delicius as always.",
+    "address": "Shivajinagar, Pune",
+    "website": "https://www.kalyanyhotel.com",
+    "phone": "+91 7816362501",
+    "email": "contact@kalyany.com",
+    "speciality": ["Both"],
+    "lodging": true,
+    "services": [
+      "Dine-in",
+      "Home Delivery",
+      "Separate veg/non-veg sections",
+      "Family Rooms",
+      "Bear Bar",
+      "Parking",
+      "Kids Play Area"
+    ],
+    "openHours": {
+      "sunday": [2, 12],
+      "monday": [10, 12],
+      "tuesday": [10, 12],
+      "wednesday": [10, 12],
+      "thursday": [10, 12],
+      "friday": [10, 12],
+      "saturnday": [2, 12]
+    }
+  },
+  {
+    "name": "Shivar Restaurant",
+    "details": "Shivar for all kind of food. You will find it so delicius as always.",
+    "address": "Swargate, Pune",
+    "website": "https://www.Shivarhotel.com",
+    "phone": "+91 7816362515",
+    "email": "contact@Shivar.com",
+    "speciality": ["Both"],
+    "services": [
+      "Dine-in",
+      "Home Delivery",
+      "Separate veg/non-veg sections",
+      "Family Rooms",
+      "Bear Bar",
+      "Parking"
+    ],
+    "openHours": {
+      "sunday": [12, 12],
+      "monday": [3, 12],
+      "tuesday": [3, 12],
+      "wednesday": [3, 12],
+      "thursday": [3, 12],
+      "friday": [3, 12],
+      "saturnday": [12, 12]
+    }
+  },
+  {
+    "name": "Mawala Motel",
+    "details": "Mawala for all kind of food. You will find it so delicius as always.",
+    "address": "Pulgate, Pune",
+    "website": "https://www.Mawalamotel.com",
+    "phone": "+91 7816362546",
+    "email": "contact@mawala.com",
+    "speciality": ["Non-Veg"],
+    "lodging": true,
+    "services": [
+      "Dine-in",
+      "Home Delivery",
+      "Separate veg/non-veg sections",
+      "Family Rooms",
+      "Parking"
+    ],
+    "openHours": {
+      "sunday": [0, 0],
+      "monday": [0, 0],
+      "tuesday": [0, 0],
+      "wednesday": [0, 0],
+      "thursday": [0, 0],
+      "friday": [0, 0],
+      "saturnday": [0, 0]
+    }
+  },
+  {
+    "name": "Sagar Hotel",
+    "details": "Sagar for all kind of food. You will find it so delicius as always.",
+    "address": "Hadapsar, Pune",
+    "website": "https://www.sagarhotel.com/contact",
+    "phone": "+91 7816362576",
+    "email": "contact@sagar.com",
+    "speciality": ["Both"],
+    "services": [
+      "Dine-in",
+      "Home Delivery",
+      "Separate veg/non-veg sections",
+      "Family Rooms",
+      "Bear Bar",
+      "Parking"
+    ],
+    "openHours": {
+      "sunday": [1, 11],
+      "monday": [10, 11],
+      "tuesday": [10, 11],
+      "wednesday": [10, 11],
+      "thursday": [10, 11],
+      "friday": [10, 11],
+      "saturnday": [1, 11]
+    }
+  }
+]

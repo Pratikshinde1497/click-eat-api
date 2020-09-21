@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const GeoCoder = require("../utility/GeoCoder");
+const slugify = require("slugify");
 
 const RestraurantSchema = new mongoose.Schema({
   name: {
@@ -95,8 +96,16 @@ const RestraurantSchema = new mongoose.Schema({
   // },
 });
 
+//  slugify the name of restraurant
+RestraurantSchema.pre("save", function (next) {
+  this.slug = slugify(this.name, { lower: true });
+  next();
+});
+
+//  add geo location for given address
 RestraurantSchema.pre("save", async function (next) {
   const loc = await GeoCoder.geocode(this.address);
+
   if (loc.length !== 0) {
     this.location = {
       type: "Point",
