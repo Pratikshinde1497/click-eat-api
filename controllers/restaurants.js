@@ -1,6 +1,7 @@
 const Restaurant = require("../models/Restraurant");
 const ErrorResponse = require("../utility/ErrorResponse");
 const AsyncHandler = require("../middelware/Async");
+const GeoCoder = require("../../bootcamp-node-backend/utils/geoCoder");
 
 //  @desc       Get all restaurants
 //  @route      GET /api/v1/restraurants
@@ -64,5 +65,45 @@ exports.deleteRestaurant = AsyncHandler(async (req, res, next) => {
   res.status(200).json({
     success: true,
     data: {},
+  });
+});
+
+//  @desc       Get restaurants within radius
+//  @route      GET /api/v1/restraurants/radius/:zipcode/:distance
+//  @access     Public
+exports.withinRadiusRestaurants = AsyncHandler(async (req, res, next) => {
+  const { zipcode } = req.params;
+
+  const distance = req.params.distance ? req.params.distance : 8;
+
+  //  get location from geocode
+  const loc = await GeoCoder.geocode(zipcode);
+  const lat = loc[0].latitude;
+  const lon = loc[0].longitude;
+
+  //  calculate radius of earth     3,963 mi  /   6,378 km
+  const radius = distance / 6378;
+
+  //  find in db
+  const restaurants = await Restaurant.find({
+    location: {
+      $geoWithin: {
+        $centerSphere: [[lon, lat], radius],
+      },
+    },
+  });
+
+  if (!restaurants) {
+    return next(
+      new ErrorResponse(
+        `no restaurants found, within ${distance}km radius`,
+        404
+      )
+    );
+  }
+  res.status(200).json({
+    success: true,
+    count: restaurants.length,
+    data: restaurants,
   });
 });

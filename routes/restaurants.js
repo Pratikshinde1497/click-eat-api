@@ -6,6 +6,7 @@ const {
   getAllRestaurants,
   getRestaurant,
   updateRestaurant,
+  withinRadiusRestaurants,
 } = require("../controllers/restaurants");
 //  load query handler middleware
 const QueryHandler = require("../middelware/QueryHandler");
@@ -14,6 +15,9 @@ const Restraurant = require("../models/Restraurant");
 
 //  initialize express router
 const router = express.Router();
+
+router.route("/radius/:zipcode").get(withinRadiusRestaurants);
+router.route("/radius/:zipcode/:distance").get(withinRadiusRestaurants);
 
 router
   .route("/")
