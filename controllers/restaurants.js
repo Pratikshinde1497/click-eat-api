@@ -6,12 +6,7 @@ const AsyncHandler = require("../middelware/Async");
 //  @route      GET /api/v1/restraurants
 //  @access     Public
 exports.getAllRestaurants = AsyncHandler(async (req, res, next) => {
-  const restraurants = await Restaurant.find();
-  res.json({
-    success: true,
-    count: restraurants.length,
-    data: restraurants,
-  });
+  res.status(200).json(res.advancedResponce);
 });
 
 //  @desc       Get restaurant

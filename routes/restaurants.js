@@ -7,11 +7,18 @@ const {
   getRestaurant,
   updateRestaurant,
 } = require("../controllers/restaurants");
+//  load query handler middleware
+const QueryHandler = require("../middelware/QueryHandler");
+//  load model
+const Restraurant = require("../models/Restraurant");
 
 //  initialize express router
 const router = express.Router();
 
-router.route("/").get(getAllRestaurants).post(addRestaurant);
+router
+  .route("/")
+  .get(QueryHandler(Restraurant), getAllRestaurants)
+  .post(addRestaurant);
 
 router
   .route("/:id")
