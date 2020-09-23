@@ -18,7 +18,7 @@ const RestraurantSchema = new mongoose.Schema({
   details: {
     type: String,
     required: [true, "please, add restraurant details"],
-    maxlength: [500, "address length should not be more than 100"],
+    maxlength: [500, "address length should not be more than 500"],
   },
   phone: {
     type: String,

@@ -10,12 +10,17 @@ const {
 } = require("../controllers/restaurants");
 //  load query handler middleware
 const QueryHandler = require("../middelware/QueryHandler");
+const food_items = require("./foodItems");
 //  load model
 const Restraurant = require("../models/Restraurant");
 
 //  initialize express router
 const router = express.Router();
 
+//  pass route to other routes
+router.use("/:restaurantId/food-items", food_items);
+
+//  restaurants within radius
 router.route("/radius/:zipcode").get(withinRadiusRestaurants);
 router.route("/radius/:zipcode/:distance").get(withinRadiusRestaurants);
 

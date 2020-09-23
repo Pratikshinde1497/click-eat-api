@@ -7,7 +7,7 @@ const ErrorHandler = require("./middelware/ErrorHandler");
 
 //  load routes
 const restaurants = require("./routes/restaurants");
-const dishes = require("./routes/dishes");
+const dishes = require("./routes/foodItems");
 const reviews = require("./routes/reviews");
 const users = require("./routes/users");
 const auth = require("./routes/auth");
@@ -24,7 +24,7 @@ app.use(express.json());
 
 //  use routes
 app.use("/api/v1/restaurants", restaurants);
-app.use("/api/v1/dishes", dishes);
+app.use("/api/v1/food-items", dishes);
 app.use("/api/v1/reviews", reviews);
 app.use("/api/v1/users", users);
 app.use("/api/v1/auth", auth);
