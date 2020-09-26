@@ -36,6 +36,17 @@ exports.loginUser = AsyncHandler(async (req, res, next) => {
   sendTokenResponse(user, 200, res);
 });
 
+//  @desc       Login user
+//  @route      GET /api/v1/auth/login
+//  @access     Private
+exports.getMe = AsyncHandler(async (req, res, next) => {
+  const user = await req.user;
+  res.status(200).json({
+    success: true,
+    data: user,
+  });
+});
+
 //  helper function to send token response to user
 function sendTokenResponse(user, statusCode, res) {
   const token = user.getJWTSignedToken();

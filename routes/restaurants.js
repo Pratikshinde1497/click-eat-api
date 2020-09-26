@@ -13,6 +13,7 @@ const QueryHandler = require("../middelware/QueryHandler");
 const food_items = require("./foodItems");
 //  load model
 const Restraurant = require("../models/Restraurant");
+const { protect } = require("../middelware/auth");
 
 //  initialize express router
 const router = express.Router();
@@ -27,12 +28,12 @@ router.route("/radius/:zipcode/:distance").get(withinRadiusRestaurants);
 router
   .route("/")
   .get(QueryHandler(Restraurant), getAllRestaurants)
-  .post(addRestaurant);
+  .post(protect, authorize("admin", "publisher"), addRestaurant);
 
 router
   .route("/:id")
   .get(getRestaurant)
-  .put(updateRestaurant)
-  .delete(deleteRestaurant);
+  .put(protect, authorize("admin", "publisher"), updateRestaurant)
+  .delete(protect, authorize("admin", "publisher"), deleteRestaurant);
 
 module.exports = router;

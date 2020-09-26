@@ -7,6 +7,7 @@ const {
   updateFoodItem,
   deleteFoodItem,
 } = require("../controllers/foodItems");
+const { protect, authorize } = require("../middelware/auth");
 const QueryHandler = require("../middelware/QueryHandler");
 //  load model
 const FoodItem = require("../models/FoodItem");
@@ -17,13 +18,13 @@ const router = express.Router({ mergeParams: true });
 router
   .route("/")
   .get(QueryHandler(FoodItem), getAllFoodItems)
-  .post(addFoodItem);
+  .post(protect, authorize("admin", "publisher"), addFoodItem);
 
 //  items with id
 router
   .route("/:id")
   .get(getFoodItem)
-  .put(updateFoodItem)
-  .delete(deleteFoodItem);
+  .put(protect, authorize("admin", "publisher"), updateFoodItem)
+  .delete(protect, authorize("admin", "publisher"), deleteFoodItem);
 
 module.exports = router;
