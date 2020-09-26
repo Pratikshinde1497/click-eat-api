@@ -1,12 +1,8 @@
 const express = require("express");
+const { registerUser } = require("../controllers/auth");
 
 const router = express.Router();
 
-router.route("/").get((req, res, next) => {
-  res.json({
-    success: true,
-    data: "in auth",
-  });
-});
+router.route("/register").post(registerUser);
 
 module.exports = router;
