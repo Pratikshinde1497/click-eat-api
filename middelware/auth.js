@@ -1,11 +1,11 @@
-const asyncHandler = require("../../bootcamp-node-backend/middlewares/async");
-const ErrorResponce = require("../../bootcamp-node-backend/utils/errorResponce");
+const AsyncHandler = require("../middelware/Async");
+const ErrorResponse = require("../utility/ErrorResponse");
 require("dotenv").config({ path: "./config/config.env" });
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 
 //  PROTECTOR ANLY ALLOWS TO ACESS RESOURCE, IF USER HAS TOKEN
-exports.protect = asyncHandler(async (req, res, next) => {
+exports.protect = AsyncHandler(async (req, res, next) => {
   let token;
   //  check if req has token and which starts "Bearer"
   if (
@@ -15,7 +15,7 @@ exports.protect = asyncHandler(async (req, res, next) => {
     token = req.headers.authorization.split(" ")[1];
   }
   if (!token) {
-    return next(new ErrorResponce(`Not Authorized to Access Resource`, 401));
+    return next(new ErrorResponse(`Not Authorized to Access Resource`, 401));
   }
   //  decode token get "id" of user from token, find that user and
   //  append it to req for further usage
@@ -24,7 +24,7 @@ exports.protect = asyncHandler(async (req, res, next) => {
     req.user = await User.findById(decoded.id);
     next();
   } catch (err) {
-    return next(new ErrorResponce(`Not Authorized to Access`, 401));
+    return next(new ErrorResponse(`Not Authorized to Access`, 401));
   }
 });
 
@@ -33,7 +33,7 @@ exports.authorize = (...roles) => {
   return (req, res, next) => {
     //  if user role is not mentioned in roles
     if (!roles.includes(req.user.role)) {
-      return next(new ErrorResponce(`Not Authorized to Access Resource`, 403));
+      return next(new ErrorResponse(`Not Authorized to Access Resource`, 403));
     }
     next();
   };
