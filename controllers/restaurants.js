@@ -28,6 +28,7 @@ exports.getRestaurant = AsyncHandler(async (req, res, next) => {
 //  @route      POST /api/v1/restraurants
 //  @access     Private
 exports.addRestaurant = AsyncHandler(async (req, res, next) => {
+  req.body.owner = req.user._id;
   const restaurant = await Restaurant.create(req.body);
   res.status(201).json({
     success: true,
@@ -42,6 +43,13 @@ exports.updateRestaurant = AsyncHandler(async (req, res, next) => {
   const restaurant = await Restaurant.findById(req.params.id);
   if (!restaurant) {
     return next(new ErrorResponse("no restaurant found", 404));
+  }
+  //  check if loged user is truly owner of restaurant or admin
+  if (
+    req.user.id !== restaurant.owner.toString() &&
+    req.user.role !== "admin"
+  ) {
+    return next(new ErrorResponse("not authorized to access resource", 403));
   }
   const updated = await Restaurant.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
@@ -60,6 +68,13 @@ exports.deleteRestaurant = AsyncHandler(async (req, res, next) => {
   const restaurant = await Restaurant.findById(req.params.id);
   if (!restaurant) {
     return next(new ErrorResponse("no restaurant found", 404));
+  }
+  //  check if loged user is truly owner of restaurant or admin
+  if (
+    req.user.id !== restaurant.owner.toString() &&
+    req.user.role !== "admin"
+  ) {
+    return next(new ErrorResponse("not authorized to access resource", 403));
   }
   await Restaurant.findByIdAndDelete(req.params.id);
   res.status(200).json({

@@ -1,0 +1,106 @@
+[
+  {
+    "_id": {
+      "$oid": "5f6ed5708e0bb52e8057e83a"
+    },
+    "role": "admin",
+    "name": "pratik",
+    "email": "pratik@g.com",
+    "password": "$2a$10$1xpvllcd2or2C9L/QPJSjOp2tUlex1Dv.G6T.ICCigiZS7pfY0yfS",
+    "createdAt": {
+      "$date": "2020-09-26T05:45:20.589Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "5f7023b58913c21eaa3cedd3"
+    },
+    "role": "user",
+    "name": "nikhil",
+    "email": "nik@gmail.com",
+    "password": "$2a$10$4Njd61svPvU0z8ccBiyWS./rn6XxigaWUd0/sZ..1U/wG3CTPXB2q",
+    "createdAt": {
+      "$date": "2020-09-27T05:31:33.550Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "5f70286570c24820ddd11c03"
+    },
+    "role": "publisher",
+    "name": "mahendra",
+    "email": "mahi@gmail.com",
+    "password": "$2a$10$BDXL11WSc59JnkzeNifvCO/T3fOh0MycGyKeC7aiRxO5TdogTn9Wm",
+    "createdAt": {
+      "$date": "2020-09-27T05:51:33.351Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "5f7030ce7e34e324a325fb87"
+    },
+    "role": "publisher",
+    "name": "brad",
+    "email": "brad@gmail.com",
+    "password": "$2a$10$iqz.jlhtvw6GEuYywGbvZu9TmCthCXMc0abl50Dc1OR1.QKQemdQ.",
+    "createdAt": {
+      "$date": "2020-09-27T06:27:26.302Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "5f7030e87e34e324a325fb88"
+    },
+    "role": "user",
+    "name": "marry",
+    "email": "marry@gmail.com",
+    "password": "$2a$10$ee8IM/PkqnO1fMHe48GR9eF0paOGBXgG0vJGhbNnQtcxS1cgCLY2y",
+    "createdAt": {
+      "$date": "2020-09-27T06:27:52.669Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "5f7031227e34e324a325fb89"
+    },
+    "role": "publisher",
+    "name": "kiran",
+    "email": "kiran@gmail.com",
+    "password": "$2a$10$2Lg46seqmoKVh2PxN7LCW.MufM9Jdf2zscgWcTPRkri5Q39OTW6RK",
+    "createdAt": {
+      "$date": "2020-09-27T06:28:50.358Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "5f70315c7e34e324a325fb8a"
+    },
+    "role": "user",
+    "name": "abhi",
+    "email": "abhi@gmail.com",
+    "password": "$2a$10$PD1d6.LaE5AEDcNckCPTWOPQUNPuu..vQNFRVoCQ11V97HZvm.MOi",
+    "createdAt": {
+      "$date": "2020-09-27T06:29:48.425Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "5f7031717e34e324a325fb8b"
+    },
+    "role": "user",
+    "name": "rushi",
+    "email": "rushi@gmail.com",
+    "password": "$2a$10$rqIiFtCALg9h8Rdy//3tHuvoA31r.PfO01F53otm2CT9rWfueX752",
+    "createdAt": {
+      "$date": "2020-09-27T06:30:09.422Z"
+    },
+    "__v": 0
+  }
+]

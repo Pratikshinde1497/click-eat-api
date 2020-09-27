@@ -27,7 +27,7 @@ router.route("/radius/:zipcode/:distance").get(withinRadiusRestaurants);
 
 router
   .route("/")
-  .get(QueryHandler(Restraurant), getAllRestaurants)
+  .get(QueryHandler(Restraurant, "owner"), getAllRestaurants)
   .post(protect, authorize("admin", "publisher"), addRestaurant);
 
 router

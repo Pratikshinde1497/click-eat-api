@@ -89,11 +89,15 @@ const RestraurantSchema = new mongoose.Schema({
   openHours: {
     type: Object,
   },
-  // owner: {
-  //   type: mongoose.Types.ObjectId,
-  //   ref: "User",
-  //   required: [true, "please, add owner"],
-  // },
+  owner: {
+    type: mongoose.Types.ObjectId,
+    ref: "User",
+    required: [true, "please, add owner"],
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 //  slugify the name of restraurant
