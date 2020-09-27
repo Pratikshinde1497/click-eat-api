@@ -13,7 +13,7 @@ const QueryHandler = require("../middelware/QueryHandler");
 const food_items = require("./foodItems");
 //  load model
 const Restraurant = require("../models/Restraurant");
-const { protect } = require("../middelware/auth");
+const { protect, authorize } = require("../middelware/auth");
 
 //  initialize express router
 const router = express.Router();
