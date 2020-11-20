@@ -1,7 +1,7 @@
 const Restaurant = require("../models/Restraurant");
 const ErrorResponse = require("../utility/ErrorResponse");
 const AsyncHandler = require("../middelware/Async");
-const GeoCoder = require("../../bootcamp-node-backend/utils/geoCoder");
+const GeoCoder = require("../utility/GeoCoder");
 
 //  @desc       Get all restaurants
 //  @route      GET /api/v1/restraurants
