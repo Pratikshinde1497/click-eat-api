@@ -22,6 +22,13 @@ connectToDatabase();
 //  use body parser
 app.use(express.json());
 
+//  public ome page
+app.get('/', (req, res) => {
+  res.json({
+    data: 'hello, this is click eat app public home page to login make /api/v1/auth/login request with email: and password:  fields'
+  })
+})
+
 //  use routes
 app.use("/api/v1/restaurants", restaurants);
 app.use("/api/v1/food-items", dishes);
