@@ -1,11 +1,17 @@
 const express = require("express");
 const path = require('path');
+const cors = require('cors');
 require("colors");
 //  get env variables
 const connectToDatabase = require("./config/db");
 require("dotenv").config({ path: "./config/config.env" });
 const ErrorHandler = require("./middelware/ErrorHandler");
-
+//  security modules
+const mongoSanitize = require('express-mongo-sanitize');
+const helmet = require('helmet');
+const xss = require('xss-clean');
+const rateLimit = require('express-rate-limit');
+const hpp = require('hpp');
 //  load routes
 const restaurants = require("./routes/restaurants");
 const dishes = require("./routes/foodItems");
@@ -17,11 +23,31 @@ const PORT = process.env.PORT || 5000;
 //  initialise express
 const app = express();
 
+//  use cross origin resource sharing
+app.use(cors());
 //  connection to db
 connectToDatabase();
 
 //  use body parser
 app.use(express.json());
+
+//  sanitize data to prevent NO-SQL injection
+app.use(mongoSanitize());
+
+//  set security headers
+app.use(helmet());
+
+//  prevent XSS attack
+app.use(xss());
+
+//  limit requests per device within period of time
+app.use(rateLimit({
+  windowMS: 10 * 60 * 1000,       // 10 min 
+  max: 100                       //  100 requests
+}));
+
+//  prevent http params polution
+app.use(hpp());
 
 //  public pages
 app.use(express.static(path.join(__dirname, './public')))
