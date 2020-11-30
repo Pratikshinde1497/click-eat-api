@@ -1,7 +1,7 @@
 const AsyncHandler = require("../middelware/Async");
 const User = require("../models/User");
 const mongoose = require("mongoose");
-
+const crypto = require('crypto');
 const ErrorResponse = require("../utility/ErrorResponse");
 
 //  @desc       Regitser/add user
@@ -62,6 +62,61 @@ exports.updatePassword = AsyncHandler(async (req, res, next) => {
   user.password = req.body.newPassword;
   //  save new password
   await user.save({validateBeforeSave: true});
+
+  sendTokenResponse(user, 200, res);
+})
+
+// @desc      Forgot password
+// @route     POST /api/v1/auth/forgotpassword
+// @access    Public
+exports.forgotpassword = AsyncHandler(async (req, res, next) => {
+  const user = await User.findOne({ email: req.body.email });
+  //  if no user
+  if(!user) {
+    return next(new ErrorResponse(`no user with that email found`, 404));
+  }
+  //  get reset token from model
+  const resetToken = user.getPasswordResetToken();
+  //  save token and expire time in db
+  await user.save({ validateBeforeSave: false });
+  //  create reset url
+  const resetUrl = `${req.protocol}://${req.get('host')}/api/v1/auth/resetpassword/${resetToken}`;
+  //  create mail message
+  const message = `you are getting this mail because you (or someone else) has requested to reset 
+  password of CLICK-EAT site account, please make PUT request to \n\n ${resetUrl} \n\n Thank you!`;
+
+  try {
+    //  give response 
+    res.status(200).json({
+      success: true,
+      data: message
+    })
+  } catch (err) {
+    return next(new ErrorResponse(`error while sending mail`, 500))
+  }
+})
+
+// @desc      Reset Password
+// @route     PUT /api/v1/auth/resetpassword/:resettoken
+// @access    Public
+exports.resetPassword = AsyncHandler(async (req, res, next) => {
+  const resetPasswordToken = crypto.createHash('sha256').update(req.params.resettoken).digest('hex');
+  //  find user with same reset token and expire time greater
+  const user = await User.findOne({
+    resetPasswordToken,
+    resetPasswordExpire: { $gt: Date.now() }
+  });
+  //  not found
+  if (!user) {
+    return next(new ErrorResponse(`Invalid token`, 400))
+  }
+
+  //  make changes
+  user.resetPasswordToken = undefined;
+  user.resetPasswordExpire = undefined;
+  user.password = req.body.password;
+  //  save entry
+  await user.save();
 
   sendTokenResponse(user, 200, res);
 })
