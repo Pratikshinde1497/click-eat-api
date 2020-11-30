@@ -37,7 +37,7 @@ exports.loginUser = AsyncHandler(async (req, res, next) => {
 });
 
 //  @desc       Login user
-//  @route      GET /api/v1/auth/login
+//  @route      GET /api/v1/auth/getMe
 //  @access     Private
 exports.getMe = AsyncHandler(async (req, res, next) => {
   const user = await req.user;
@@ -47,12 +47,43 @@ exports.getMe = AsyncHandler(async (req, res, next) => {
   });
 });
 
-//  helper function to send token response to user
-function sendTokenResponse(user, statusCode, res) {
-  const token = user.getJWTSignedToken();
+// @desc      Update user password
+// @route     PUT /api/v1/auth/updatepassword
+// @access    Private
+exports.updatePassword = AsyncHandler(async (req, res, next) => {
+  //  get user details
+  const user = await User.findById(req.user.id).select('+password');
+  if(!user) {
+    return next(new ErrorResponse(`no user found with id: ${req.user.id}`, 400));
+  }
+  if(!(await user.comparePasswords(req.body.currentPassword))) {
+    return next(new ErrorResponse(`Invalid credentials`, 400));
+  }
+  user.password = req.body.newPassword;
+  //  save new password
+  await user.save({validateBeforeSave: true});
 
-  res.status(statusCode).json({
-    success: true,
-    token,
-  });
+  sendTokenResponse(user, 200, res);
+})
+
+// @desc      Helper function to send response
+const sendTokenResponse = (user, statusCode, res) => {
+  //  get Token
+  const token = user.getJWTSignedToken();
+  //  set cookie options
+  // const options = {
+  //   expires: new Date( Date.now() + process.env.JWT_COOKIE_EXPIRE * 24 * 60 * 60 * 1000),
+  //   httpOnly: true
+  // }
+  if(process.env.NODE_ENV === 'production') {
+    options.secure = true
+  }
+  //  send response
+  res
+    .status(statusCode)
+    // .cookie('token', token, options)
+    .json({
+      success: true,
+      token
+  })
 }
