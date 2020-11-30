@@ -25,7 +25,8 @@
       "thursday": [10, 12],
       "friday": [10, 12],
       "saturnday": [2, 12]
-    }
+    },
+    "owner": "5f70286570c24820ddd11c03"
   },
   {
     "name": "Shivar Restaurant",
@@ -51,7 +52,8 @@
       "thursday": [3, 12],
       "friday": [3, 12],
       "saturnday": [12, 12]
-    }
+    },
+    "owner": "5f7031227e34e324a325fb89"
   },
   {
     "name": "Mawala Motel",
@@ -77,7 +79,8 @@
       "thursday": [0, 0],
       "friday": [0, 0],
       "saturnday": [0, 0]
-    }
+    },
+    "owner": "5f7030ce7e34e324a325fb87"
   },
   {
     "name": "Sagar Hotel",
@@ -103,6 +106,48 @@
       "thursday": [10, 11],
       "friday": [10, 11],
       "saturnday": [1, 11]
-    }
+    },
+    "owner": "5f6ed5708e0bb52e8057e83a"
+  },
+  {
+    "_id":"5fbe0697fa17280017ba549b",
+    "address": "Madanwadi maharashtra",
+    "photo": "no-photo.jpg",
+    "lodging": false,
+    "services": [
+      "Home Delivery",
+      "Separate veg/non-veg sections",
+      "Family Rooms",
+      "Bear Bar",
+      "Parking"
+    ],
+    "speciality": [
+      "Both"
+    ],
+    "name": "shindeshahi restro",
+    "details": "details for restro details its a very famous restro over the world. we have specialty over muchhi.",
+    "email": "shindeshahi.support@gmail.com",
+    "phone": "+91 9503234027",
+    "owner": "5fbdeecc95b6220017eaf537"
+  },
+  {
+    "_id": "5fc2402aeb353900174cc420",
+    "address": "chinchawali daund",
+    "photo": "no-photo.jpg",
+    "lodging": true,
+    "services": [
+        "Dine-in",
+        "Parking",
+        "Separate veg/non-veg sections",
+        "Bear Bar"
+    ],
+    "speciality": [
+        "Both"
+    ],
+    "name": "pratiks dhaba",
+    "details": "dhaba for heavy duty truck drivers, feel hungry grab food",
+    "email": "support@pratiksdhaba.com",
+    "phone": "0123456789",
+    "owner":  "5fb7a73c8ad50700170a248f"
   }
 ]
