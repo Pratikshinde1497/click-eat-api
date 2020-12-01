@@ -1,9 +1,11 @@
-const mongoose = require("mongoose");
-require("dotenv").config({ path: "./config/config.env" });
-const fs = require("fs");
 require("colors");
+require("dotenv").config({ path: "./config/config.env" });
+const mongoose = require("mongoose");
+const fs = require("fs");
+//  load models
 const Restraurant = require("./models/Restraurant");
 const User = require("./models/User");
+const FoodItem = require("./models/FoodItem");
 
 //  connect to db
 mongoose.connect(process.env.MONGODB_URL, {
@@ -15,12 +17,14 @@ mongoose.connect(process.env.MONGODB_URL, {
 
 const users = JSON.parse(fs.readFileSync(`${__dirname}/test_data/users.json`, "utf-8"));
 const restraurants = JSON.parse(fs.readFileSync(`${__dirname}/test_data/restraurants.json`, "utf-8"));
+const foodItems = JSON.parse(fs.readFileSync(`${__dirname}/test_data/foodItems.json`, "utf-8"));
 
 const importData = async () => {
   try {
 
     await User.create(users);
     await Restraurant.create(restraurants);
+    await FoodItem.create(foodItems);
 
     console.log(`Data Imported Successfully..`.green.inverse);
     process.exit();
@@ -33,6 +37,7 @@ const deleteData = async () => {
   try {
     await User.deleteMany();
     await Restraurant.deleteMany();
+    await FoodItem.deleteMany();
 
     console.log(`Data Deleted Successfully..`.red.inverse);
     process.exit();

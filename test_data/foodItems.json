@@ -1,0 +1,110 @@
+[
+  {
+    "name": "Malai Chaap",
+    "details": "Most Popular Tender Tandoori Soya Chunks in Creamy Gravy",
+    "category": "North Indian",
+    "domain": "Veg",
+    "price": 350,
+    "restaurant": "5fc2402aeb353900174cc420",
+    "user": "5fb7a73c8ad50700170a248f"
+  },
+  {
+    "name": "Daal Makani",
+    "details": "Creamy Black Dal Cooked To Perfection",
+    "category": "North Indian",
+    "domain": "Veg",
+    "price": 350,
+    "restaurant": "5fc2402aeb353900174cc420",
+    "user": "5fb7a73c8ad50700170a248f"
+  },
+  {
+    "name": "Cheese Filled Chaap Stick",
+    "details": "Premium Cheese Filled Chaap",
+    "category": "North Indian",
+    "domain": "Veg",
+    "price": 250,
+    "restaurant": "5fc2402aeb353900174cc420",
+    "user": "5fb7a73c8ad50700170a248f"
+  },
+  {
+    "name": "Panir Tikka",
+    "details": "Paneer in a Creamy Gravy",
+    "category": "Starters",
+    "domain": "Veg",
+    "price": 400,
+    "restaurant": "5fc2402aeb353900174cc420",
+    "user": "5fb7a73c8ad50700170a248f"
+  },
+  {
+    "name": "DIY (Frozen) Chatpata Chaap",
+    "details": "New Frozen DIY (Do-It-Yourself) Chatpata Chaap. All information and cooking instructions on the box.",
+    "category": "Starters",
+    "domain": "Veg",
+    "price": 270,
+    "restaurant": "5fc2402aeb353900174cc420",
+    "user": "5fb7a73c8ad50700170a248f"
+  },
+  {
+    "name": "Cheese Filled Chaap",
+    "details": "Premium Cheese Filled Chaap",
+    "category": "Chinese",
+    "domain": "Veg",
+    "price": 120,
+    "restaurant": "5fc2402aeb353900174cc420",
+    "user": "5fb7a73c8ad50700170a248f"
+  },  
+  {
+    "name": "Shahi Paneer",
+    "details": "premium Paneer With Shahiness",
+    "category": "Thalis",
+    "domain": "Veg",
+    "price": 450,
+    "restaurant": "5fc2402aeb353900174cc420",
+    "user": "5fb7a73c8ad50700170a248f"
+  },
+  {
+    "name": "Chicken Tikka Biryani (1KG)",
+    "details": "premium Chicken 1 kg biryani With Shahiness",
+    "category": "Biryani",
+    "domain": "Non-Veg",
+    "price": 1350,
+    "restaurant": "5fc2402aeb353900174cc420",
+    "user": "5fb7a73c8ad50700170a248f"
+  },
+  {
+    "name": "Butter Chicken (1KG)",
+    "details": "premium Butter chicken With Shahiness",
+    "category": "Thalis",
+    "domain": "Non-Veg",
+    "price": 1200,
+    "restaurant": "5fc2402aeb353900174cc420",
+    "user": "5fb7a73c8ad50700170a248f"
+  },
+  {
+    "name": "Mutton Kepsa Thaali",
+    "details": "Mutton thali serves 3-4 people well",
+    "category": "Thalis",
+    "domain": "Non-Veg",
+    "price": 700,
+    "restaurant": "5fc2402aeb353900174cc420",
+    "user": "5fb7a73c8ad50700170a248f"
+  },
+  {
+    "name": "Mirinda 1.2L",
+    "details": "Orange Mirinda, be mirinda",
+    "category": "Desserts",
+    "domain": "Mixed",
+    "price": 90,
+    "restaurant": "5fc2402aeb353900174cc420",
+    "user": "5fb7a73c8ad50700170a248f"
+  },
+  {
+    "name": "Pepsy 600M",
+    "details": "Cocacola pepsy",
+    "category": "Desserts",
+    "domain": "Mixed",
+    "price": 50,
+    "restaurant": "5fc2402aeb353900174cc420",
+    "user": "5fb7a73c8ad50700170a248f"
+  }
+]

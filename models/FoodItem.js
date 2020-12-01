@@ -4,7 +4,6 @@ const FoodItemSchema = new mongoose.Schema({
   name: {
     type: String,
     trim: true,
-    unique: true,
     required: [true, "please add food-item name"],
   },
   details: {
