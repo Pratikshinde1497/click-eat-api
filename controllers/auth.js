@@ -96,24 +96,24 @@ exports.forgotpassword = AsyncHandler(async (req, res, next) => {
   await user.save({ validateBeforeSave: false });
   //  create reset url
   const resetUrl = `${req.protocol}://${req.get('host')}/api/v1/auth/resetpassword/${resetToken}`;
-  //  create mail message
-  const message = `You are getting this mail because you (or someone else) has requested to reset 
-  password of CLICK-EAT account, please make PUT request to \n\n <a href=${resetUrl}>${resetUrl}</a> \n\n Thank you!`;
-
+  
+  //  create msg to send in email 
+  const message = `You are getting this message because you or someone else tring to reset passsword; 
+  if its you then make sure, you make <b>PUT</b> request to ${resetUrl} with newPassword in JSON body.
+  
+  Thank You!!`;
   try {    
+    await SendMail({
+      sendTo: user.email,
+      subject: 'Click-Eat Reset Password Request Found',
+      text: message,
+      html: `<p>${message}</p>`
+    });
     //  give response 
     res.status(200).json({
       success: true,
       data: resetToken
     })
-
-    await SendMail({
-      sendTo: user.email,
-      subject: 'Click-Eat Reset Password',
-      text: message,
-      html: `<p>${message}</p>`
-    });
-
   } catch (err) {
     return next(new ErrorResponse(`error while sending mail`, 500))
   }
@@ -140,8 +140,22 @@ exports.resetPassword = AsyncHandler(async (req, res, next) => {
   user.password = req.body.password;
   //  save entry
   await user.save();
+  //  create mail message
+  const message = `Password Reset Successfully Complete.\n\n Thank you!`;
+  try {    
 
-  sendTokenResponse(user, 200, res);
+    await SendMail({
+      sendTo: user.email,
+      subject: 'From Click-Eat',
+      text: message,
+      html: `<p>${message}</p>`
+    });
+
+    //  give response 
+    sendTokenResponse(user, 200, res);
+  } catch (err) {
+    return next(new ErrorResponse(`error while sending mail`, 500))
+  }
 })
 
 // @desc      Helper function to send response
