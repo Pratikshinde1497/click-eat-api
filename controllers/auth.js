@@ -3,6 +3,7 @@ const User = require("../models/User");
 const mongoose = require("mongoose");
 const crypto = require('crypto');
 const ErrorResponse = require("../utility/ErrorResponse");
+const SendMail = require("../utility/SendMail");
 
 //  @desc       Regitser/add user
 //  @route      POST /api/v1/auth/register
@@ -62,8 +63,22 @@ exports.updatePassword = AsyncHandler(async (req, res, next) => {
   user.password = req.body.newPassword;
   //  save new password
   await user.save({validateBeforeSave: true});
+  //  create mail message
+  const message = `You CLICK-EAT account password has updated successfully \n\n Thank you!`;
 
-  sendTokenResponse(user, 200, res);
+  try {
+    sendTokenResponse(user, 200, res);
+    
+    await SendMail({
+      sendTo: user.email,
+      subject: 'Click-Eat Update Password',
+      text: message,
+      html: `<p>${message}</p>`
+    });
+    //  give response 
+  } catch (err) {
+    return next(new ErrorResponse(`error while sending mail`, 500))
+  }
 })
 
 // @desc      Forgot password
@@ -82,15 +97,23 @@ exports.forgotpassword = AsyncHandler(async (req, res, next) => {
   //  create reset url
   const resetUrl = `${req.protocol}://${req.get('host')}/api/v1/auth/resetpassword/${resetToken}`;
   //  create mail message
-  const message = `you are getting this mail because you (or someone else) has requested to reset 
-  password of CLICK-EAT site account, please make PUT request to \n\n ${resetUrl} \n\n Thank you!`;
+  const message = `You are getting this mail because you (or someone else) has requested to reset 
+  password of CLICK-EAT account, please make PUT request to \n\n <a href=${resetUrl}>${resetUrl}</a> \n\n Thank you!`;
 
-  try {
+  try {    
     //  give response 
     res.status(200).json({
       success: true,
-      data: message
+      data: resetToken
     })
+
+    await SendMail({
+      sendTo: user.email,
+      subject: 'Click-Eat Reset Password',
+      text: message,
+      html: `<p>${message}</p>`
+    });
+
   } catch (err) {
     return next(new ErrorResponse(`error while sending mail`, 500))
   }
