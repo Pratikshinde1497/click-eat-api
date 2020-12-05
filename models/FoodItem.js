@@ -61,6 +61,10 @@ const FoodItemSchema = new mongoose.Schema({
     type: String,
     default: "no-food-photo.jpeg",
   },
+  quantity: {
+    type: Number,
+    default: 0
+  },
   restaurant: {
     type: mongoose.Types.ObjectId,
     ref: "Restaurant",
