@@ -18,6 +18,7 @@ const dishes = require("./routes/foodItems");
 const reviews = require("./routes/reviews");
 const users = require("./routes/users");
 const auth = require("./routes/auth");
+const orders= require("./routes/orders");
 
 const PORT = process.env.PORT || 5000;
 //  initialise express
@@ -30,6 +31,7 @@ connectToDatabase();
 
 //  use body parser
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 //  sanitize data to prevent NO-SQL injection
 app.use(mongoSanitize());
@@ -63,6 +65,7 @@ app.use("/api/v1/food-items", dishes);
 app.use("/api/v1/reviews", reviews);
 app.use("/api/v1/users", users);
 app.use("/api/v1/auth", auth);
+app.use("/api/v1/orders", orders);
 
 //  error handling
 app.use(ErrorHandler);

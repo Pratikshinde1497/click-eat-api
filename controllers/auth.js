@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const crypto = require('crypto');
 const ErrorResponse = require("../utility/ErrorResponse");
 const SendMail = require("../utility/SendMail");
+const Order = require("../models/Order");
 
 //  @desc       Regitser/add user
 //  @route      POST /api/v1/auth/register
@@ -179,3 +180,31 @@ const sendTokenResponse = (user, statusCode, res) => {
       token
   })
 }
+
+//  @desc       Get all made by user(customer)
+//  @route      GET /api/v1/auth/user/:id/orders
+//  @access     Private
+exports.getAllOrdersByCustomer = AsyncHandler(async (req, res, next) => {
+  
+  //  continue
+  const orders = await Order.find({customer: req.params.id});
+  res.status(200).json({
+    success: true,
+    count: orders.length,
+    data: orders,
+  });
+});
+
+//  @desc       Get all made by restaurant
+//  @route      GET /api/v1/auth/restaurant/:restaurant_id/orders
+//  @access     Private
+exports.getAllOrdersByRestaurant = AsyncHandler(async (req, res, next) => {
+  
+  //  continue
+  const orders = await Order.find({restaurant: req.params.restaurant_id});
+  res.status(200).json({
+    success: true,
+    count: orders.length,
+    data: orders,
+  });
+});

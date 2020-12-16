@@ -14,6 +14,9 @@ const UserSchema = new mongoose.Schema({
     match: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "enter valid email"],
     unique: true,
   },
+  address: {
+    type: String,
+  },
   role: {
     type: String,
     enum: ["user", "publisher"],
