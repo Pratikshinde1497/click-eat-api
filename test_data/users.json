@@ -4,63 +4,71 @@
     "role": "user",
     "name": "pratik",
     "email": "pratik@gmail.com",
-    "password": "$2a$10$lNNitZ92nUICxbuUDvWINumPeNW22jWc1HPxAUm1ObS4LvL4z51eO"
-    
+    "password": "$2a$10$lNNitZ92nUICxbuUDvWINumPeNW22jWc1HPxAUm1ObS4LvL4z51eO",
+    "address": "कसबा गणपती, राम गणेश गडकरी पथ, KASBA PETH, PUNE, PUNE DISTRICT, MAHARASHTRA, 411002, INDIA"
   },
   {
     "_id": "5f7023b58913c21eaa3cedd3",
     "role": "user",
     "name": "nikhil",
     "email": "nik@gmail.com",
-    "password": "$2a$10$4Njd61svPvU0z8ccBiyWS./rn6XxigaWUd0/sZ..1U/wG3CTPXB2q"
+    "password": "$2a$10$4Njd61svPvU0z8ccBiyWS./rn6XxigaWUd0/sZ..1U/wG3CTPXB2q",
+    "address": "चितळे बंधू मिठाईवाले, रा. ब. कुमठेकर मार्ग, नारायण पेठ, PUNE, PUNE DISTRICT, MAHARASHTRA, 411030, INDIA"
   },
   {
     "_id": "5f70286570c24820ddd11c03",
     "role": "publisher",
     "name": "mahendra",
     "email": "mahi@gmail.com",
-    "password": "$2a$10$BDXL11WSc59JnkzeNifvCO/T3fOh0MycGyKeC7aiRxO5TdogTn9Wm"
+    "password": "$2a$10$BDXL11WSc59JnkzeNifvCO/T3fOh0MycGyKeC7aiRxO5TdogTn9Wm",
+    "address": "SANT KABIR POLICE STATION, जवाहरलाल नेहरु मार्ग, SOMWAR PETH, PUNE, PUNE DISTRICT, MAHARASHTRA, 411002, INDIA"
   },
   {
     "_id": "5f7030ce7e34e324a325fb87",
     "role": "publisher",
     "name": "brad",
     "email": "brad@gmail.com",
-    "password": "$2a$10$iqz.jlhtvw6GEuYywGbvZu9TmCthCXMc0abl50Dc1OR1.QKQemdQ."
+    "password": "$2a$10$iqz.jlhtvw6GEuYywGbvZu9TmCthCXMc0abl50Dc1OR1.QKQemdQ.",
+    "address": "मंगळवार पेठ, PUNE, PUNE DISTRICT, MAHARASHTRA, 411011, INDIA"
   },
   {
     "_id": "5f7030e87e34e324a325fb88",
     "role": "user",
     "name": "marry",
     "email": "marry@gmail.com",
-    "password": "$2a$10$ee8IM/PkqnO1fMHe48GR9eF0paOGBXgG0vJGhbNnQtcxS1cgCLY2y"
+    "password": "$2a$10$ee8IM/PkqnO1fMHe48GR9eF0paOGBXgG0vJGhbNnQtcxS1cgCLY2y",
+    "address": "शिवाजीनगर, PUNE, PUNE DISTRICT, MAHARASHTRA, 411016, INDIA"
   },
   {
     "_id":  "5f7031227e34e324a325fb89",
     "role": "publisher",
     "name": "kiran",
     "email": "kiran@gmail.com",
-    "password": "$2a$10$2Lg46seqmoKVh2PxN7LCW.MufM9Jdf2zscgWcTPRkri5Q39OTW6RK"
+    "password": "$2a$10$2Lg46seqmoKVh2PxN7LCW.MufM9Jdf2zscgWcTPRkri5Q39OTW6RK",
+    "address": "BHARAT PETROLEUM, गोपाळ कृष्ण गोखले पथ, शिवाजीनगर, PUNE, PUNE DISTRICT, MAHARASHTRA, 411016, INDIA"
   },
   {
     "_id": "5f70315c7e34e324a325fb8a",
     "role": "user",
     "name": "abhi",
     "email": "abhi@gmail.com",
-    "password": "$2a$10$PD1d6.LaE5AEDcNckCPTWOPQUNPuu..vQNFRVoCQ11V97HZvm.MOi"
+    "password": "$2a$10$PD1d6.LaE5AEDcNckCPTWOPQUNPuu..vQNFRVoCQ11V97HZvm.MOi",
+    "address": "COLLECTOR OFFICE, बाबासाहेब आंबेडकर मार्ग, SOMWAR PETH, PUNE, PUNE DISTRICT, MAHARASHTRA, 411001, INDIA"
   },
   {
     "_id": "5f7031717e34e324a325fb8b",
     "role": "user",
     "name": "rushi",
     "email": "rushi@gmail.com",
-    "password": "$2a$10$rqIiFtCALg9h8Rdy//3tHuvoA31r.PfO01F53otm2CT9rWfueX752"
+    "password": "$2a$10$rqIiFtCALg9h8Rdy//3tHuvoA31r.PfO01F53otm2CT9rWfueX752",
+    "address": "SOMWAR PETH, PUNE, PUNE DISTRICT, MAHARASHTRA, 411001, INDIA"
   },
   {
     "_id": "5fbdeecc95b6220017eaf537",
     "role": "publisher",
     "name": "aba",
     "email": "aba@gmail.com",
-    "password": "$2a$10$B/pxoDbhgcQ3RnocXC.4I.qm9lku/lDw/Kpebub//H4KN2lHa1Fta"
+    "password": "$2a$10$B/pxoDbhgcQ3RnocXC.4I.qm9lku/lDw/Kpebub//H4KN2lHa1Fta",
+    "address": "WADIA COLLEGE, BUND GARDEN ROAD, SOMWAR PETH, PUNE, PUNE DISTRICT, MAHARASHTRA, 411001, INDIA"
   }
 ]

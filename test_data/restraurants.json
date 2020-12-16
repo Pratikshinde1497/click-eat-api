@@ -2,7 +2,7 @@
   {
     "name": "Kalyany Hotel",
     "details": "kalyani for all kind of food. You will find it so delicius as always.",
-    "address": "Shivajinagar, Pune",
+    "address": "VEER SAVARKAR NAGAR, DAUND, PUNE DISTRICT, MAHARASHTRA, 413800, INDIA",
     "website": "https://www.kalyanyhotel.com",
     "phone": "+91 7816362501",
     "email": "contact@kalyany.com",
@@ -31,7 +31,7 @@
   {
     "name": "Shivar Restaurant",
     "details": "Shivar for all kind of food. You will find it so delicius as always.",
-    "address": "Swargate, Pune",
+    "address": "DADA LASER EYE INSTITUTE, इस्ट स्ट्रीट, PUNE CANTONMENT, PUNE, PUNE DISTRICT, MAHARASHTRA, 411001, INDIA",
     "website": "https://www.Shivarhotel.com",
     "phone": "+91 7816362515",
     "email": "contact@Shivar.com",
@@ -58,7 +58,7 @@
   {
     "name": "Mawala Motel",
     "details": "Mawala for all kind of food. You will find it so delicius as always.",
-    "address": "Pulgate, Pune",
+    "address": "दक्षिणमुखी मारुती मंदिर, हरिहरेश्वर मंदिर मार्ग, SHANIWAR PETH, PUNE, PUNE DISTRICT, MAHARASHTRA, 411002, INDIA",
     "website": "https://www.Mawalamotel.com",
     "phone": "+91 7816362546",
     "email": "contact@mawala.com",
@@ -85,7 +85,7 @@
   {
     "name": "Sagar Hotel",
     "details": "Sagar for all kind of food. You will find it so delicius as always.",
-    "address": "Hadapsar, Pune",
+    "address": "फरासखाना पोलीस ठाणे, शिवाजी रस्ता, SHANIWAR PETH, PUNE, PUNE DISTRICT, MAHARASHTRA, 411002, INDIA",
     "website": "https://www.sagarhotel.com/contact",
     "phone": "+91 7816362576",
     "email": "contact@sagar.com",
@@ -111,7 +111,7 @@
   },
   {
     "_id":"5fbe0697fa17280017ba549b",
-    "address": "Madanwadi maharashtra",
+    "address": "अपोलो, सरदार मुदलियार पथ, SOMWAR PETH, PUNE, PUNE DISTRICT, MAHARASHTRA, 411002, INDIA",
     "photo": "no-photo.jpg",
     "lodging": false,
     "services": [
@@ -132,7 +132,7 @@
   },
   {
     "_id": "5fc2402aeb353900174cc420",
-    "address": "chinchawali daund",
+    "address": "विश्रामबागवाडा, बाजीराव रस्ता, SHUKRAWAR PETH, PUNE, PUNE DISTRICT, MAHARASHTRA, 411002, INDIA",
     "photo": "no-photo.jpg",
     "lodging": true,
     "services": [
