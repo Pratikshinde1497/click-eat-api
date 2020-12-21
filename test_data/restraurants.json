@@ -5,6 +5,7 @@
     "address": "VEER SAVARKAR NAGAR, DAUND, PUNE DISTRICT, MAHARASHTRA, 413800, INDIA",
     "website": "https://www.kalyanyhotel.com",
     "phone": "+91 7816362501",
+    "photo": "https://static01.nyt.com/images/2010/11/10/dining/10rest-span/10rest-span-articleLarge.jpg",
     "email": "contact@kalyany.com",
     "speciality": ["Both"],
     "lodging": true,
@@ -34,6 +35,7 @@
     "address": "DADA LASER EYE INSTITUTE, इस्ट स्ट्रीट, PUNE CANTONMENT, PUNE, PUNE DISTRICT, MAHARASHTRA, 411001, INDIA",
     "website": "https://www.Shivarhotel.com",
     "phone": "+91 7816362515",
+    "photo": "https://i0.wp.com/jewishviennesefood.com/wp-content/uploads/2020/07/Neni-am-Nascmarkt-restaurant-Vienna.jpg?resize=700%2C875&ssl=1",
     "email": "contact@Shivar.com",
     "speciality": ["Both"],
     "services": [
@@ -61,6 +63,7 @@
     "address": "दक्षिणमुखी मारुती मंदिर, हरिहरेश्वर मंदिर मार्ग, SHANIWAR PETH, PUNE, PUNE DISTRICT, MAHARASHTRA, 411002, INDIA",
     "website": "https://www.Mawalamotel.com",
     "phone": "+91 7816362546",
+    "photo": "https://lh3.googleusercontent.com/proxy/NtNJCfWyzfnyKZt1e4f7uIxli2DCaiPAfZpUuoK5LrArJZEqLNOz7zNugXYBC2B7hV4Uayr8x4tjuxwT-wsNDKdo8uDNfkx3lo3KckU",
     "email": "contact@mawala.com",
     "speciality": ["Non-Veg"],
     "lodging": true,
@@ -88,6 +91,7 @@
     "address": "फरासखाना पोलीस ठाणे, शिवाजी रस्ता, SHANIWAR PETH, PUNE, PUNE DISTRICT, MAHARASHTRA, 411002, INDIA",
     "website": "https://www.sagarhotel.com/contact",
     "phone": "+91 7816362576",
+    "photo": "https://dreamofacity.files.wordpress.com/2014/10/9-restaurant-imaginary.jpg?w=900",
     "email": "contact@sagar.com",
     "speciality": ["Both"],
     "services": [
@@ -112,7 +116,7 @@
   {
     "_id":"5fbe0697fa17280017ba549b",
     "address": "अपोलो, सरदार मुदलियार पथ, SOMWAR PETH, PUNE, PUNE DISTRICT, MAHARASHTRA, 411002, INDIA",
-    "photo": "no-photo.jpg",
+    "photo": "https://www.emilianaservizi.it/wp-content/uploads/2018/09/nuovi-impianti-realizzati-in-Bar-ristoranti-e-nogozi-di-vario-genere-nelle-province-di-Bologna-Ferarra-e-Modena..jpg",
     "lodging": false,
     "services": [
       "Home Delivery",
@@ -133,7 +137,7 @@
   {
     "_id": "5fc2402aeb353900174cc420",
     "address": "विश्रामबागवाडा, बाजीराव रस्ता, SHUKRAWAR PETH, PUNE, PUNE DISTRICT, MAHARASHTRA, 411002, INDIA",
-    "photo": "no-photo.jpg",
+    "photo": "https://lh3.googleusercontent.com/proxy/k7F-41eP0EqzVY9Y3Zh01dTjr9naVmIH1T80henO5hdfkzpLySt0nI0W2DUHSkne96cTSx_sSJS3FDuV4DnsO8XQjxHrbGCux9AMudUqnKY76ADIGIR_",
     "lodging": true,
     "services": [
         "Dine-in",
