@@ -36,8 +36,26 @@ app.use(express.urlencoded({ extended: true }));
 //  sanitize data to prevent NO-SQL injection
 app.use(mongoSanitize());
 
-//  set security headers
-app.use(helmet());
+//  Helmet helps you secure your Express apps by setting various HTTP headers.  
+//  Instead all those lines we can also write
+//  app.use(helmet());
+app.use(helmet.contentSecurityPolicy( {
+  directives: {
+    defaultSrc: ["'self'"],
+    connectSrc: ["'self'", 'https://nominatim.openstreetmap.org'],
+    imgSrc: ["'self'", 'https://*.tile.openstreetmap.org']
+  }
+}));
+app.use(helmet.dnsPrefetchControl());
+app.use(helmet.expectCt());
+app.use(helmet.frameguard());
+app.use(helmet.hidePoweredBy());
+app.use(helmet.hsts());
+app.use(helmet.ieNoOpen());
+app.use(helmet.noSniff());
+app.use(helmet.permittedCrossDomainPolicies());
+app.use(helmet.referrerPolicy());
+app.use(helmet.xssFilter());
 
 //  prevent XSS attack
 app.use(xss());
