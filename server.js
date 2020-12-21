@@ -45,8 +45,9 @@ app.use(helmet.contentSecurityPolicy( {
     baseUri: ["'self'"],
     connectSrc: ["'self'", 'https://nominatim.openstreetmap.org'],
     imgSrc: ["'self'",'data:', 'https://*.tile.openstreetmap.org'],
-    scriptSrc: ["'self'",  'https:', "'unsafe-inline'"],
+    styleSrc: ["'self'",  'https:', "'unsafe-inline'"],
     fontSrc: ["'self'", 'https:', 'data:'],
+    scriptSrc: ["'self'"],
     scriptSrcAttr: ["'none'"],
     objectSrc: ["'none'"]
   }
