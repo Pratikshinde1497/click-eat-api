@@ -42,8 +42,13 @@ app.use(mongoSanitize());
 app.use(helmet.contentSecurityPolicy( {
   directives: {
     defaultSrc: ["'self'"],
+    baseUri: ["'self'"],
     connectSrc: ["'self'", 'https://nominatim.openstreetmap.org'],
-    imgSrc: ["'self'", 'https://*.tile.openstreetmap.org']
+    imgSrc: ["'self'",'data:', 'https://*.tile.openstreetmap.org'],
+    scriptSrc: ["'self'",  'https:', "'unsafe-inline'"],
+    fontSrc: ["'self'", 'https:', 'data:'],
+    scriptSrcAttr: ["'none'"],
+    objectSrc: ["'none'"]
   }
 }));
 app.use(helmet.dnsPrefetchControl());
